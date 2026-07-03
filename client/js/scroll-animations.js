@@ -142,7 +142,11 @@ const ScrollAnimations = (() => {
       hamburger.setAttribute('aria-expanded', String(isOpen));
     });
   };
-
+const initDynamicContentReveal = () => {
+  document.addEventListener('content-rendered', () => {
+    initRevealOnScroll();
+  });
+};
   const init = () => {
     initRevealOnScroll();
     initNavbarScrollEffect();
@@ -163,8 +167,3 @@ document.addEventListener('DOMContentLoaded', () => {
  * Re-scans the DOM for [data-reveal] / [data-reveal-group] elements
  * that were injected AFTER the initial page load.
  */
-const initDynamicContentReveal = () => {
-  document.addEventListener('content-rendered', () => {
-    initRevealOnScroll();
-  });
-};

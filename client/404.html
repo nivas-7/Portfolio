@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | Srinivas</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <style>
+    body[data-theme] {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-primary);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      text-align: center;
+      padding: var(--space-md);
+    }
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(4rem, 15vw, 8rem);
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+    .error-message {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+    .error-home-link {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-md);
+      background: var(--accent-gradient);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow-glow);
+      transition: transform 0.2s ease;
+    }
+    .error-home-link:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div>
+    <div class="error-code">404</div>
+    <p class="error-message">This page doesn't exist — even the best developers write broken links sometimes.</p>
+    <a href="/index.html" class="error-home-link">Back to Home</a>
+  </div>
+</body>
+</html>

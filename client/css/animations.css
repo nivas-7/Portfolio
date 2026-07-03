@@ -1,0 +1,162 @@
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+@keyframes loaderSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scrollDot {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 24px;
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes counterPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   SCROLL-REVEAL SYSTEM
+   Elements start hidden via [data-reveal], then get .revealed added
+   by scroll-animations.js (using IntersectionObserver) when they
+   enter the viewport.
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal='left'] {
+  transform: translateX(-40px);
+}
+[data-reveal='left'].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal='right'] {
+  transform: translateX(40px);
+}
+[data-reveal='right'].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal='scale'] {
+  transform: scale(0.92);
+}
+[data-reveal='scale'].revealed {
+  transform: scale(1);
+}
+
+/* Stagger children reveal (used for skill/project grids) */
+[data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal-group].revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-group].revealed > *:nth-child(1) { transition-delay: 0.05s; }
+[data-reveal-group].revealed > *:nth-child(2) { transition-delay: 0.1s; }
+[data-reveal-group].revealed > *:nth-child(3) { transition-delay: 0.15s; }
+[data-reveal-group].revealed > *:nth-child(4) { transition-delay: 0.2s; }
+[data-reveal-group].revealed > *:nth-child(5) { transition-delay: 0.25s; }
+[data-reveal-group].revealed > *:nth-child(6) { transition-delay: 0.3s; }
+[data-reveal-group].revealed > *:nth-child(n+7) { transition-delay: 0.35s; }
+
+/* Animated counter (used if you add stats like "X projects completed") */
+.counter-animate {
+  animation: counterPulse 0.4s ease;
+}
+
+/* Reduced motion accessibility override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build/output
+dist/
+build/
+
+# Uploaded/generated assets (if any temp uploads happen server-side)
+server/uploads/tmp/
+
+# Misc
+*.pem
+*.key
+coverage/

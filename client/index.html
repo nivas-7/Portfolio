@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Srinivas | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Full Stack Developer specializing in Java, React, and Node.js. Explore my projects, skills, and experience." />
+  <meta name="keywords" content="Srinivas, Full Stack Developer, Java Developer, React Developer, Portfolio" />
+  <meta name="author" content="Srinivas" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Srinivas | Full Stack Developer Portfolio" />
+  <meta property="og:description" content="Full Stack Developer specializing in Java, React, and Node.js." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/og-preview.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body data-theme="dark">
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-content">
+      <span class="loader-logo">&lt;SR /&gt;</span>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header id="navbar" class="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo">Srinivas<span class="accent">.dev</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="hamburger" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-gradient"></div>
+      <div class="container hero-container">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name" id="hero-name">Loading...</h1>
+        <h2 class="hero-typing">
+          <span id="typing-text"></span><span class="typing-cursor">|</span>
+        </h2>
+        <p class="hero-bio" id="hero-bio"></p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+
+        <div class="hero-socials" id="hero-socials"></div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-mouse"></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-image-wrap">
+            <div class="about-image-frame">
+              <img id="profile-image" src="" alt="Profile photo" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p id="about-bio" class="about-bio"></p>
+
+            <div class="about-details">
+              <div class="about-block">
+                <h3>Education</h3>
+                <ul id="education-list" class="about-list"></ul>
+              </div>
+              <div class="about-block">
+                <h3>Experience</h3>
+                <ul id="experience-list" class="about-list"></ul>
+              </div>
+            </div>
+
+            <a id="resume-download" href="#" class="btn btn-primary" download>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-number">02.</span> Skills</h2>
+        <div id="skills-grid" class="skills-grid">
+          <!-- Skill cards injected dynamically by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-number">03.</span> Projects</h2>
+        <div id="projects-grid" class="projects-grid">
+          <!-- Project cards injected dynamically by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-number">04.</span> Get In Touch</h2>
+        <p class="contact-intro">
+          Have a project in mind or just want to say hello? My inbox is always open.
+        </p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required minlength="2" maxlength="100" />
+              <span class="form-error" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+              <span class="form-error" id="email-error"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required minlength="3" maxlength="150" />
+            <span class="form-error" id="subject-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required minlength="10" maxlength="2000"></textarea>
+            <span class="form-error" id="message-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-spinner" hidden></span>
+          </button>
+
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">Srinivas<span class="accent">.dev</span></a>
+        <p>Building things for the web, one commit at a time.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-socials" id="footer-socials">
+        <h4>Connect</h4>
+        <!-- Social icons injected dynamically -->
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Srinivas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCROLL TO TOP ============ -->
+  <button id="scroll-top-btn" class="scroll-top-btn" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/typing-effect.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -7,8 +7,8 @@ const API = (() => {
   // Adjust this if your backend runs on a different host/port in production.
   // During local dev, the backend runs on PORT from .env (default 5000).
   const BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:5000/api'
-    : '/api'; // in production, assumes API is served from the same domain or proxied
+  ? 'http://localhost:5000/api'
+  : 'https://portfolio-iz5b.onrender.com/api';
 
   /**
    * Generic request wrapper with consistent error handling.

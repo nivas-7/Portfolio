@@ -262,6 +262,15 @@ Submits a contact form message. Rate-limited to 5 requests per 15 minutes per IP
 Simple health check endpoint for deployment monitoring.
 
 ---
+## ⚠️ Known Limitation — Email Notifications on Free Hosting
+
+Contact form submissions are **reliably saved to MongoDB Atlas** in all environments, verified working in production.
+
+However, email notifications via Nodemailer/SMTP may fail to send when the backend is deployed on **Render's free tier**, since many free cloud hosting platforms restrict or block outbound SMTP ports (587/465) to prevent spam abuse. This is an infrastructure-level restriction, not an application bug — the same code sends emails successfully when run locally or on a paid/unrestricted hosting tier.
+
+**To verify contact form submissions in production:** check the `contacts` collection directly in MongoDB Atlas (Database → Browse Collections → `portfolio` → `contacts`).
+
+**To fully resolve this in a production deployment:** swap Nodemailer/SMTP for an HTTP-based email API (e.g., Resend, SendGrid, Brevo's API endpoint) which sends over HTTPS rather than SMTP ports, avoiding this restriction entirely.
 
 ## 🌐 Deployment Guide
 

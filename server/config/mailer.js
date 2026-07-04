@@ -9,11 +9,14 @@ const createTransporter = () => {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: parseInt(process.env.EMAIL_PORT, 10) || 587,
-    secure: parseInt(process.env.EMAIL_PORT, 10) === 465, // true for port 465, false for 587/25
+    secure: parseInt(process.env.EMAIL_PORT, 10) === 465,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    connectionTimeout: 8000,
+    greetingTimeout: 8000,
+    socketTimeout: 8000,
   });
 
   return transporter;
